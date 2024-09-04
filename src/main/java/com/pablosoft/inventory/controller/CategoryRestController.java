@@ -32,7 +32,7 @@ public class CategoryRestController {
         return  service.searchById(id);
     }
     /**
-     * Save a category
+     * Creates and saves a category
      * @param category
      * @return
      */
@@ -41,7 +41,7 @@ public class CategoryRestController {
         return  service.save(category);
     }
     /**
-     * Update a category
+     * Update a category by ID
      * @param category
      * @param id
      * @return
@@ -49,5 +49,15 @@ public class CategoryRestController {
     @PutMapping("/categories/{id}")
     public ResponseEntity<CategoryResponseRest> update(@RequestBody Category category, @PathVariable Long id){
         return  service.update(category, id);
+    }
+
+    /**
+     * Deletes a category by ID
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/categories/{id}")
+    public ResponseEntity<CategoryResponseRest> delete(@PathVariable Long id){
+        return  service.delete(id);
     }
 }

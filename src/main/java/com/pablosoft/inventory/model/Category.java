@@ -17,15 +17,6 @@ public class Category implements Serializable {
     private String name;
     private String description;
 
-    public Category() {
-        this("Generic","Generic description");
-    }
-
-    public Category(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
     public Long getId() {
         return id;
     }
